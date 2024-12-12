@@ -9,9 +9,29 @@ import {
   Image, 
 } from "react-native";
 import PieChart from "react-native-pie-chart";
+import { BarChart } from "react-native-chart-kit";
+import { Dimensions } from 'react-native';
 
+const screenWidth = Dimensions.get('window').width;
 
+const data = {
+  labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  datasets: [
+    {
+      data: [20, 45, 28, 80, 99, 43]
+    }
+  ]
+};
 
+const chartConfig = {
+  backgroundColor: () => '#f9f9f9',
+  backgroundGradientFrom: '#f9f9f9',
+  backgroundGradientTo: '#f9f9f9',
+  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+  style: {
+    borderRadius: 16,
+  },
+};
 
 const widthAndHeight = 180;
 const series = [8, 5, 2];
@@ -27,6 +47,15 @@ const StaffDashboard = (props) => {
             Staff Dashboard
           </Text>
 
+
+{/* Appointment Analytics */}
+<BarChart
+  data={data}
+  width={screenWidth}
+  height={220}
+  chartConfig={chartConfig}
+  verticalLabelRotation={30}
+/>
          
 
           {/* OPD Insights */}
