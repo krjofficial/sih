@@ -300,15 +300,15 @@ const styles = StyleSheet.create({
 		marginRight: 29,
 	},
 	text3: {
-    color: "#000000",
+    color: "##F6F6F6",
     fontSize: 8,
     marginLeft: 20,  // Adds margin to the left to shift text
-    textAlign: 'left',  // Ensures the text aligns to the left
+    textAlign: 'left', 
   },
 	text4: {
 		color: "#000000",
 		fontSize: 10,
-		marginRight: 15,
+		marginRight: 19,
 	},
 	text5: {
 		color: "#000000",

@@ -1,24 +1,188 @@
-import React, {useState} from "react";
-import { SafeAreaView, View, ScrollView, Text, Image, TextInput, TouchableOpacity, StyleSheet, } from "react-native";
-export default (props) => {
-	const [textInput1, onChangeTextInput1] = useState('');
-	const [textInput2, onChangeTextInput2] = useState('');
-	const [textInput3, onChangeTextInput3] = useState('');
-	const [textInput4, onChangeTextInput4] = useState('');
-	const [textInput5, onChangeTextInput5] = useState('');
-	const [textInput6, onChangeTextInput6] = useState('');
-	const [textInput7, onChangeTextInput7] = useState('');
-	const [textInput8, onChangeTextInput8] = useState('');
-	const [textInput9, onChangeTextInput9] = useState('');
-	const [textInput10, onChangeTextInput10] = useState('');
-	return (
-		<SafeAreaView style={styles.container}>
-			<ScrollView  style={styles.scrollView}>
+// import React, {useState} from "react";
+// import { SafeAreaView, View, ScrollView, Text, Image, TextInput, TouchableOpacity, StyleSheet, } from "react-native";
+// export default (props) => {
+// 	const [textInput1, onChangeTextInput1] = useState('');
+// 	const [textInput2, onChangeTextInput2] = useState('');
+// 	const [textInput3, onChangeTextInput3] = useState('');
+// 	const [textInput4, onChangeTextInput4] = useState('');
+// 	const [textInput5, onChangeTextInput5] = useState('');
+// 	const [textInput6, onChangeTextInput6] = useState('');
+// 	const [textInput7, onChangeTextInput7] = useState('');
+// 	const [textInput8, onChangeTextInput8] = useState('');
+// 	const [textInput9, onChangeTextInput9] = useState('');
+// 	const [textInput10, onChangeTextInput10] = useState('');
+// 	return (
+// 		<SafeAreaView style={styles.container}>
+// 			<ScrollView  style={styles.scrollView}>
 				
-				<Text style={styles.text2}>
-					{"Add Patient"}
-				</Text>
-				<View style={styles.row2}>
+// 				<Text style={styles.text2}>
+// 					{"Add Patient"}
+// 				</Text>
+// 				<View style={styles.row2}>
+// 					<Image
+// 						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a2b4d1b8-9a27-4732-8970-e8001fc4f156"}} 
+// 						resizeMode = {"stretch"}
+// 						style={styles.image2}
+// 					/>
+// 					<Text style={styles.text3}>
+// 						{"Basic Details"}
+// 					</Text>
+// 					<View style={styles.box}>
+// 					</View>
+// 					<Image
+// 						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/829ab784-bf45-42be-b003-24902ce18c18"}} 
+// 						resizeMode = {"stretch"}
+// 						style={styles.image2}
+// 					/>
+// 					<Text style={styles.text4}>
+// 						{"Emergency Contact"}
+// 					</Text>
+// 					<View style={styles.box}>
+// 					</View>
+// 					<Image
+// 						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cf2b7b63-70da-4fe7-aeaf-0fe70f2040c0"}} 
+// 						resizeMode = {"stretch"}
+// 						style={styles.image2}
+// 					/>
+// 					<Text style={styles.text4}>
+// 						{"Insurance"}
+// 					</Text>
+// 				</View>
+// 				<View style={styles.box2}>
+// 				</View>
+// 				<Text style={styles.text5}>
+// 					{"Full Name"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter Full name"}
+// 					value={textInput1}
+// 					onChangeText={onChangeTextInput1}
+// 					style={styles.input}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"Phone number "}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter phone number"}
+// 					value={textInput2}
+// 					onChangeText={onChangeTextInput2}
+// 					style={styles.input}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"E-mail ID"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter email id"}
+// 					value={textInput3}
+// 					onChangeText={onChangeTextInput3}
+// 					style={styles.input2}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"Date of birth"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"dd-mm-yyyy"}
+// 					value={textInput4}
+// 					onChangeText={onChangeTextInput4}
+// 					style={styles.input}
+// 				/>
+// 				<Text style={styles.text6}>
+// 					{"Gender"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Select the gender"}
+// 					value={textInput5}
+// 					onChangeText={onChangeTextInput5}
+// 					style={styles.input}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"Referred by"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter Full name"}
+// 					value={textInput6}
+// 					onChangeText={onChangeTextInput6}
+// 					style={styles.input}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"Blood Group"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Select the blood group"}
+// 					value={textInput7}
+// 					onChangeText={onChangeTextInput7}
+// 					style={styles.input3}
+// 				/>
+// 				<Text style={styles.text7}>
+// 					{"Allergy(if any)"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Allergy(if any)"}
+// 					value={textInput8}
+// 					onChangeText={onChangeTextInput8}
+// 					style={styles.input4}
+// 				/>
+// 				<Text style={styles.text6}>
+// 					{"City"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter city"}
+// 					value={textInput9}
+// 					onChangeText={onChangeTextInput9}
+// 					style={styles.input2}
+// 				/>
+// 				<Text style={styles.text5}>
+// 					{"Pincode"}
+// 				</Text>
+// 				<TextInput
+// 					placeholder={"Enter pin code"}
+// 					value={textInput10}
+// 					onChangeText={onChangeTextInput10}
+// 					style={styles.input5}
+// 				/>
+// 				<TouchableOpacity style={styles.button} onPress={()=>props.navigation.navigate("AddPatient")}>
+// 					<Text style={styles.text8}>
+// 						{" Next"}
+// 					</Text>
+// 				</TouchableOpacity>
+			
+// 			</ScrollView>
+// 		</SafeAreaView>
+// 	)
+// }
+
+
+
+
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  View,
+  ScrollView,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
+
+export default (props) => {
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [gender, setGender] = useState("");
+  const [referredBy, setReferredBy] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [allergy, setAllergy] = useState("");
+  const [city, setCity] = useState("");
+  const [pincode, setPincode] = useState("");
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <Text style={styles.text2}>{"Add Patient"}</Text>
+		<View style={styles.row2}>
 					<Image
 						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a2b4d1b8-9a27-4732-8970-e8001fc4f156"}} 
 						resizeMode = {"stretch"}
@@ -48,108 +212,131 @@ export default (props) => {
 						{"Insurance"}
 					</Text>
 				</View>
-				<View style={styles.box2}>
-				</View>
-				<Text style={styles.text5}>
-					{"Full Name"}
-				</Text>
-				<TextInput
-					placeholder={"Enter Full name"}
-					value={textInput1}
-					onChangeText={onChangeTextInput1}
-					style={styles.input}
-				/>
-				<Text style={styles.text5}>
-					{"Phone number "}
-				</Text>
-				<TextInput
-					placeholder={"Enter phone number"}
-					value={textInput2}
-					onChangeText={onChangeTextInput2}
-					style={styles.input}
-				/>
-				<Text style={styles.text5}>
-					{"E-mail ID"}
-				</Text>
-				<TextInput
-					placeholder={"Enter email id"}
-					value={textInput3}
-					onChangeText={onChangeTextInput3}
-					style={styles.input2}
-				/>
-				<Text style={styles.text5}>
-					{"Date of birth"}
-				</Text>
-				<TextInput
-					placeholder={"dd-mm-yyyy"}
-					value={textInput4}
-					onChangeText={onChangeTextInput4}
-					style={styles.input}
-				/>
-				<Text style={styles.text6}>
-					{"Gender"}
-				</Text>
-				<TextInput
-					placeholder={"Select the gender"}
-					value={textInput5}
-					onChangeText={onChangeTextInput5}
-					style={styles.input}
-				/>
-				<Text style={styles.text5}>
-					{"Referred by"}
-				</Text>
-				<TextInput
-					placeholder={"Enter Full name"}
-					value={textInput6}
-					onChangeText={onChangeTextInput6}
-					style={styles.input}
-				/>
-				<Text style={styles.text5}>
-					{"Blood Group"}
-				</Text>
-				<TextInput
-					placeholder={"Select the blood group"}
-					value={textInput7}
-					onChangeText={onChangeTextInput7}
-					style={styles.input3}
-				/>
-				<Text style={styles.text7}>
-					{"Allergy(if any)"}
-				</Text>
-				<TextInput
-					placeholder={"Allergy(if any)"}
-					value={textInput8}
-					onChangeText={onChangeTextInput8}
-					style={styles.input4}
-				/>
-				<Text style={styles.text6}>
-					{"City"}
-				</Text>
-				<TextInput
-					placeholder={"Enter city"}
-					value={textInput9}
-					onChangeText={onChangeTextInput9}
-					style={styles.input2}
-				/>
-				<Text style={styles.text5}>
-					{"Pincode"}
-				</Text>
-				<TextInput
-					placeholder={"Enter pin code"}
-					value={textInput10}
-					onChangeText={onChangeTextInput10}
-					style={styles.input5}
-				/>
-				<TouchableOpacity style={styles.button} onPress={()=>props.navigation.navigate("AddPatient2")}>
-					<Text style={styles.text8}>
-						{" Next"}
-					</Text>
-				</TouchableOpacity>
-			
-			</ScrollView>
-		</SafeAreaView>
-	)
-}
+
+        <Text style={styles.text5}>{"Full Name"}</Text>
+        <TextInput
+          placeholder={"Enter Full Name"}
+          value={fullName}
+          onChangeText={setFullName}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text5}>{"Phone Number"}</Text>
+        <TextInput
+          placeholder={"Enter Phone Number"}
+          value={phoneNumber}
+          onChangeText={(text) =>
+            setPhoneNumber(text.replace(/[^0-9]/g, ""))
+          }
+          style={styles.input}
+          keyboardType="phone-pad"
+          maxLength={10}
+        />
+
+        <Text style={styles.text5}>{"E-mail ID"}</Text>
+        <TextInput
+          placeholder={"Enter Email ID"}
+          value={email}
+          onChangeText={setEmail}
+          style={styles.input}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+
+        <Text style={styles.text5}>{"Date of Birth"}</Text>
+<TextInput
+  placeholder={"DD-MM-YYYY"}
+  value={dateOfBirth}
+  onChangeText={(text) => {
+    const formattedText = text
+      .replace(/[^0-9]/g, "") // Allow only numbers
+      .slice(0, 8); // Limit to 8 characters (DDMMYYYY)
+    let newText = "";
+    if (formattedText.length > 0) {
+      newText = formattedText.substring(0, 2); // Add DD
+    }
+    if (formattedText.length > 2) {
+      newText += "-" + formattedText.substring(2, 4); // Add MM
+    }
+    if (formattedText.length > 4) {
+      newText += "-" + formattedText.substring(4, 8); // Add YYYY
+    }
+    setDateOfBirth(newText);
+  }}
+  style={styles.input}
+  keyboardType="numeric"
+  maxLength={10}
+/>
+
+
+        <Text style={styles.text6}>{"Gender"}</Text>
+        <TextInput
+          placeholder={"Enter Gender (Male/Female/Other)"}
+          value={gender}
+          onChangeText={setGender}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text5}>{"Referred By"}</Text>
+        <TextInput
+          placeholder={"Enter Referrer Name"}
+          value={referredBy}
+          onChangeText={setReferredBy}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text5}>{"Blood Group"}</Text>
+        <TextInput
+          placeholder={"Enter Blood Group (e.g., A+, B-, O+)"}
+          value={bloodGroup}
+          onChangeText={(text) => setBloodGroup(text.toUpperCase())}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text7}>{"Allergy (if any)"}</Text>
+        <TextInput
+          placeholder={"Enter Allergies"}
+          value={allergy}
+          onChangeText={setAllergy}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text6}>{"City"}</Text>
+        <TextInput
+          placeholder={"Enter City"}
+          value={city}
+          onChangeText={setCity}
+          style={styles.input}
+          keyboardType="default"
+        />
+
+        <Text style={styles.text5}>{"Pincode"}</Text>
+        <TextInput
+          placeholder={"Enter Pincode"}
+          value={pincode}
+          onChangeText={(text) =>
+            setPincode(text.replace(/[^0-9]/g, ""))
+          }
+          style={styles.input}
+          keyboardType="numeric"
+          maxLength={6}
+        />
+
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => props.navigation.navigate("AddPatient2")}
+        >
+          <Text style={styles.text8}>{"Next"}</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,

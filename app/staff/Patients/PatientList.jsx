@@ -14,7 +14,7 @@ export default (props) => {
 						resizeMode = {"stretch"}
 						style={styles.image2}
 					/>
-					<TextInput
+					<TextInput 
 						placeholder={"Search by name"}
 						value={textInput1}
 						onChangeText={onChangeTextInput1}

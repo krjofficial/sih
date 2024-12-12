@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	button: {
-		width: 100,
+		width: 80,
 		alignItems: "center",
 		borderColor: "#4C6FFFCC",
 		borderRadius: 6,
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 		paddingVertical: 16,
 	},
 	button2: {
-		width: 96,
+		width: 86,
 		alignItems: "center",
 		backgroundColor: "#4C6FFFCC",
 		borderRadius: 6,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
 	input3: {
 		color: "#000000",
 		fontSize: 12,
-		marginBottom: 157,
+		marginBottom: 57,
 		marginHorizontal: 32,
 		backgroundColor: "#E0E0E0",
 		borderColor: "#A8A8A8",
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "center",
-		marginBottom: 76,
+		marginBottom: 6,
 		marginHorizontal: 68,
 	},
 	row3: {

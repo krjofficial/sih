@@ -7,7 +7,6 @@ export default (props) => {
 				
 				<View style={styles.column}>
 					<Image
-						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/587afc33-f5e1-4f53-b9f7-d0443d805006"}} 
 						resizeMode = {"stretch"}
 						style={styles.image2}
 					/>
@@ -26,7 +25,7 @@ export default (props) => {
 								resizeMode = {"stretch"}
 								style={styles.image4}
 							/>
-							<Text style={styles.text3}>
+							<Text style={styles.text16}>
 								{"    Name"}
 							</Text>
 						</View>
@@ -59,7 +58,7 @@ export default (props) => {
 						<Text style={styles.text4}>
 							{"Rajesh Sharma"}
 						</Text>
-						<Text style={styles.text5}>
+						<Text style={styles.text9}>
 							{"Staff"}
 						</Text>
 						<View style={styles.box2}>
@@ -87,7 +86,7 @@ export default (props) => {
 								resizeMode = {"stretch"}
 								style={styles.image7}
 							/>
-							<Text style={styles.text9}>
+							<Text style={styles.text15}>
 								{"Received Concerns from admin "}
 							</Text>
 						</View>
@@ -204,11 +203,11 @@ const styles = StyleSheet.create({
 	image3: {
 		height: 93,
 		marginBottom: 18,
-		marginHorizontal: 116,
+		marginHorizontal: 126,
 	},
 	image4: {
 		height: 32,
-		marginBottom: 10,
+		
 	},
 	image5: {
 		height: 32,
@@ -297,20 +296,33 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		marginBottom: 17,
 		marginHorizontal: 118,
+		marginLeft: 130,
 	},
 	text3: {
 		color: "#407CE2",
 		fontSize: 10,
+		
+	},
+	text16: {
+		color: "#407CE2",
+		fontSize: 10,
+		marginBottom: 12,
 	},
 	text4: {
 		color: "#4C6FFF",
 		fontSize: 12,
-		marginRight: 46,
+		marginRight: 59,
 	},
 	text5: {
 		color: "#4C6FFF",
 		fontSize: 12,
 	},
+	text15: {
+		color: "#4C6FFF",
+		fontSize: 12,
+		marginRight:20,
+	},
+	
 	text6: {
 		color: "#407CE2",
 		fontSize: 12,

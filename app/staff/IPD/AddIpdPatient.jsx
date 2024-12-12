@@ -5,6 +5,7 @@ export default (props) => {
 	const [textInput2, onChangeTextInput2] = useState('');
 	const [textInput3, onChangeTextInput3] = useState('');
 	const [textInput4, onChangeTextInput4] = useState('');
+	const [dateOfBirth, setDateOfBirth] = useState('');
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView  style={styles.scrollView}>
@@ -18,41 +19,79 @@ export default (props) => {
 				<View style={styles.box}>
 				</View>
 				<Text style={styles.text4}>
-					{"Full Name"}
+  {"Full Name"}
+</Text>
+<TextInput
+  placeholder={"Enter Full name"}
+  value={textInput1}
+  onChangeText={(text) => {
+    // Allow only alphabetic characters and space
+    const alphabeticText = text.replace(/[^a-zA-Z\s]/g, '');
+    onChangeTextInput1(alphabeticText); // Update the state with the filtered input
+  }}
+  style={styles.input}
+/>
+
+				<Text style={styles.text4}>
+					{"Date of Birth"}
 				</Text>
 				<TextInput
-					placeholder={"Enter Full name"}
-					value={textInput1}
-					onChangeText={onChangeTextInput1}
-					style={styles.input}
-				/>
-				<Text style={styles.text5}>
-					{"Date of arrival"}
-				</Text>
-				<TextInput
-					placeholder={"Enter Date of arrival"}
-					value={textInput2}
-					onChangeText={onChangeTextInput2}
-					style={styles.input2}
-				/>
-				<Text style={styles.text6}>
-					{"Ward Name"}
-				</Text>
-				<TextInput
-					placeholder={"Type or select the ward"}
-					value={textInput3}
-					onChangeText={onChangeTextInput3}
-					style={styles.input3}
-				/>
-				<Text style={styles.text7}>
-					{"Bed Number"}
-				</Text>
-				<TextInput
-					placeholder={"Enter Bed Number"}
-					value={textInput4}
-					onChangeText={onChangeTextInput4}
-					style={styles.input4}
-				/>
+  placeholder={"DD-MM-YYYY"}
+  value={dateOfBirth}
+  onChangeText={(text) => {
+    const formattedText = text
+      .replace(/[^0-9]/g, "") // Allow only numbers
+      .slice(0, 8); // Limit to 8 characters (DDMMYYYY)
+    
+    let newText = "";
+    
+    // Format the text as DD-MM-YYYY
+    if (formattedText.length > 0) {
+      newText = formattedText.substring(0, 2); // Add DD
+    }
+    if (formattedText.length > 2) {
+      newText += "-" + formattedText.substring(2, 4); // Add MM
+    }
+    if (formattedText.length > 4) {
+      newText += "-" + formattedText.substring(4, 8); // Add YYYY
+    }
+    
+    setDateOfBirth(newText); // Update the state with the formatted date
+  }}
+  style={styles.input}
+  keyboardType="numeric"
+  maxLength={10} // Max length of 10 characters (DD-MM-YYYY)
+ />
+
+<Text style={styles.text6}>
+  {"Ward Name"}
+</Text>
+<TextInput
+  placeholder={"Type or select the ward"}
+  value={textInput3}
+  onChangeText={(text) => {
+    // Allow only alphabetic characters and spaces
+    const alphabeticText = text.replace(/[^a-zA-Z\s]/g, '');
+    onChangeTextInput3(alphabeticText); // Update the state with the filtered input
+  }}
+  style={styles.input3}
+/>
+
+<Text style={styles.text7}>
+  {"Bed Number"}
+</Text>
+<TextInput
+  placeholder={"Enter Bed Number"}
+  value={textInput4}
+  onChangeText={(text) => {
+    // Allow only numbers
+    const numericText = text.replace(/[^0-9]/g, '');
+    onChangeTextInput4(numericText); // Update the state with the filtered numeric input
+  }}
+  style={styles.input4}
+  keyboardType="numeric" // Ensures the numeric keyboard is used
+/>
+
 				<View style={styles.row2}>
 					<TouchableOpacity style={styles.button} onPress={()=>props.navigation.navigate("IpdPatientList")}>
 						<Text style={styles.text8}>

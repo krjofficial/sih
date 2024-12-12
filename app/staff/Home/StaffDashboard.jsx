@@ -1,167 +1,127 @@
 import React from "react";
-import { 
-  View, 
-  Text, 
-  TouchableOpacity, 
-  SafeAreaView, 
-  ScrollView, 
-  StyleSheet, 
-  Image, 
-} from "react-native";
-import PieChart from "react-native-pie-chart";
-import { BarChart } from "react-native-chart-kit";
-import { Dimensions } from 'react-native';
-
-const screenWidth = Dimensions.get('window').width;
-
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-  datasets: [
-    {
-      data: [20, 45, 28, 80, 99, 43]
-    }
-  ]
-};
-
-const chartConfig = {
-  backgroundColor: () => '#f9f9f9',
-  backgroundGradientFrom: '#f9f9f9',
-  backgroundGradientTo: '#f9f9f9',
-  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-  style: {
-    borderRadius: 16,
-  },
-};
-
-const widthAndHeight = 180;
-const series = [8, 5, 2];
-const sliceColor = ['#A6B7D4', '#FF92AE', '#4C6FFF'];
-
-const StaffDashboard = (props) => {
-  return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 20 }}>
-        <View style={{ padding: 16 }}>
-          {/* Dashboard Title */}
-          <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 16 }}>
-            Staff Dashboard
-          </Text>
-
-
-{/* Appointment Analytics */}
-<BarChart
-  data={data}
-  width={screenWidth}
-  height={220}
-  chartConfig={chartConfig}
-  verticalLabelRotation={30}
-/>
-         
-
-          {/* OPD Insights */}
-          <View style={styles.opdcontainer}>
-            <Text style={styles.title}>OPD Insights</Text>
-            <View style={styles.row}>
-              <View style={styles.column2}>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2b274091-8210-460c-a998-407e1c48799d",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"8"}</Text>
-                </View>
-                <Text style={styles.text3}>{"Beds available"}</Text>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/27306837-cfbe-483b-a06a-8589c65dc12e",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"5"}</Text>
-                </View>
-                <Text style={styles.text3}>{"Wards available"}</Text>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/17152371-dd4b-4ef1-ab6f-c3ca7d68f359",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"2"}</Text>
-                </View>
-                <Text style={styles.text4}>{"Beds not in use"}</Text>
-              </View>
-              <PieChart
-                widthAndHeight={widthAndHeight}
-                series={series}
-                sliceColor={sliceColor}
-                coverRadius={0.7}
-                coverFill={"#FFF"}
-              />
-            </View>
-          </View>
-          {/* IPD Insights */}
-          <View style={styles.ipdcontainer}>
-            <Text style={styles.title}>IPD Insights</Text>
-            <View style={styles.row}>
-              <View style={styles.column2}>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2b274091-8210-460c-a998-407e1c48799d",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"8"}</Text>
-                </View>
-                <Text style={styles.text3}>{"Beds available"}</Text>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/27306837-cfbe-483b-a06a-8589c65dc12e",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"5"}</Text>
-                </View>
-                <Text style={styles.text3}>{"Wards available"}</Text>
-                <View style={styles.row2}>
-                  <Image
-                    source={{
-                      uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/17152371-dd4b-4ef1-ab6f-c3ca7d68f359",
-                    }}
-                    resizeMode={"stretch"}
-                    style={styles.image}
-                  />
-                  <Text style={styles.text2}>{"2"}</Text>
-                </View>
-                <Text style={styles.text4}>{"Beds not in use"}</Text>
-              </View>
-              <PieChart
-                widthAndHeight={widthAndHeight}
-                series={series}
-                sliceColor={sliceColor}
-                coverRadius={0.7}
-                coverFill={"#FFF"}
-              />
-            </View>
-          </View>
-
-
-{/* Navigate to Policy List */}
-        <TouchableOpacity onPress={() => props.navigation.navigate("PolicyList")}>
-          <View style={styles.row3}>
+import { SafeAreaView, View, ScrollView, Text, Image, ImageBackground, StyleSheet, } from "react-native";
+export default (props) => {
+	return (
+		<SafeAreaView style={styles.container}>
+			<ScrollView  style={styles.scrollView}>
+				<View style={styles.column}>
+					<Text style={styles.text}>
+						{"OPD  Insights"}
+					</Text>
+					<View style={styles.row}>
+						<View style={styles.column2}>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d23dd4cf-5a59-4ada-a241-9387bb9b3b7f"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"8"}
+								</Text>
+							</View>
+							<Text style={styles.text3}>
+								{"Beds available"}
+							</Text>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/aafef1b5-00c1-4d5d-a2da-e656c9858e1b"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"5"}
+								</Text>
+							</View>
+							<Text style={styles.text3}>
+								{"Wards available"}
+							</Text>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/545cf5fe-ad29-411d-aa2d-3b109e849f30"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"2"}
+								</Text>
+							</View>
+							<Text style={styles.text4}>
+								{"Beds not in use"}
+							</Text>
+						</View>
+						<ImageBackground 
+							source={{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/14c98916-9ee7-44ad-b7bd-f73fa3c3157f"}} 
+							resizeMode = {'stretch'}
+							style={styles.view}
+							>
+							<Text style={styles.text5}>
+								{"23"}
+							</Text>
+						</ImageBackground>
+					</View>
+				</View>
+				<View style={styles.column}>
+					<Text style={styles.text}>
+						{"IPD  Insights"}
+					</Text>
+					<View style={styles.row}>
+						<View style={styles.column2}>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/48766a21-2b1f-47e3-a9ea-daff1584d2e7"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"8"}
+								</Text>
+							</View>
+							<Text style={styles.text3}>
+								{"Beds available"}
+							</Text>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a52b23c0-d07a-4ef9-b598-11bb69557748"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"5"}
+								</Text>
+							</View>
+							<Text style={styles.text6}>
+								{"Wards available"}
+							</Text>
+							<View style={styles.row2}>
+								<Image
+									source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/63aae090-22f2-409c-b756-9658215ca839"}} 
+									resizeMode = {"stretch"}
+									style={styles.image}
+								/>
+								<Text style={styles.text2}>
+									{"2"}
+								</Text>
+							</View>
+							<Text style={styles.text4}>
+								{"Beds not in use"}
+							</Text>
+						</View>
+						<ImageBackground 
+							source={{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/28d5147f-b0c2-4deb-841d-4254d9fb68ba"}} 
+							resizeMode = {'stretch'}
+							style={styles.view}
+							>
+							<Text style={styles.text5}>
+								{"23"}
+							</Text>
+						</ImageBackground>
+					</View>
+				</View>
+				<View style={styles.row3}>
 					<View style={styles.column3}>
 						<Image
-							source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b49ab91a-b912-40a4-8b95-a5f3c51fc326"}} 
+							source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/275def78-5333-4d8d-97c1-d456b5fad71f"}} 
 							resizeMode = {"stretch"}
 							style={styles.image2}
 						/>
@@ -173,95 +133,59 @@ const StaffDashboard = (props) => {
 						</Text>
 					</View>
 					<Image
-						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/b7997828-665c-4f33-b60d-e4fc49655308"}} 
+						source = {{uri: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/21a4801c-0cc5-4c14-9df4-385fd50bc85a"}} 
 						resizeMode = {"stretch"}
 						style={styles.image3}
 					/>
 				</View>
-        </TouchableOpacity>
-
-
-         
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-export default StaffDashboard;
-
+			
+			</ScrollView>
+		</SafeAreaView>
+	)
+}
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-  },
-  ipdcontainer: {
-    margin: 12,
-    backgroundColor: "#FFFFFF",
-    padding: 16,
-    borderRadius: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
-  opdcontainer: {
-    margin: 12,
-    backgroundColor: "#FFFFFF",
-    padding: 16,
-    borderRadius: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
-  row: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  row2: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 3,
-  },
-  column2: {
-    width: 72,
-  },
-  image: {
-    width: 8,
-    height: 8,
-    marginRight: 8,
-  },
-  text2: {
-    color: "#27272E",
-    fontSize: 12,
-    flex: 1,
-  },
-  text3: {
-    color: "#718096",
-    fontSize: 10,
-    marginBottom: 27,
-  },
-  text4: {
-    color: "#718096",
-    fontSize: 10,
-  },
-  title: {
-    fontSize: 24,
-    margin: 10,
-  },
-  text7: {
-		color: "#000000",
-		fontSize: 22,
-		marginBottom: 15,
+	container: {
+		flex: 1,
+		backgroundColor: "#FFFFFF",
 	},
-	text8: {
-		color: "#4C6FFF",
-		fontSize: 12,
-		marginHorizontal: 3,
+	box: {
+		flex: 1,
 	},
-  image2: {
+	column: {
+		backgroundColor: "#FFFFFF",
+		borderColor: "#C4C4C433",
+		borderRadius: 16,
+		borderWidth: 1,
+		paddingVertical: 30,
+		paddingHorizontal: 24,
+		marginBottom: 30,
+		marginHorizontal: 52,
+	},
+	column2: {
+		width: 72,
+	},
+	column3: {
+		width: 171,
+	},
+	column4: {
+		backgroundColor: "#FFFFFF",
+		paddingVertical: 17,
+		paddingHorizontal: 29,
+		shadowColor: "#63636333",
+		shadowOpacity: 0.2,
+		shadowOffset: {
+		    width: 0,
+		    height: 2
+		},
+		shadowRadius: 8,
+		elevation: 8,
+	},
+	image: {
+		width: 8,
+		height: 8,
+		marginRight: 8,
+	},
+	image2: {
 		width: 41,
 		height: 40,
 		marginBottom: 13,
@@ -271,10 +195,35 @@ const styles = StyleSheet.create({
 		height: 108,
 		marginTop: 25,
 	},
-  column3: {
-		width: 171,
-  },
-  row3: {
+	image4: {
+		width: 19,
+		height: 20,
+	},
+	image5: {
+		width: 20,
+		height: 20,
+		marginRight: 68,
+	},
+	image6: {
+		width: 24,
+		height: 24,
+		marginRight: 59,
+	},
+	image7: {
+		width: 24,
+		height: 24,
+	},
+	row: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+	},
+	row2: {
+		flexDirection: "row",
+		alignItems: "center",
+		marginBottom: 3,
+	},
+	row3: {
 		flexDirection: "row",
 		justifyContent: "space-between",
 		alignItems: "flex-start",
@@ -287,5 +236,83 @@ const styles = StyleSheet.create({
 		paddingLeft: 17,
 		marginBottom: 154,
 		marginHorizontal: 14,
+	},
+	row4: {
+		flexDirection: "row",
+		alignItems: "center",
+		marginBottom: 7,
+	},
+	row5: {
+		flexDirection: "row",
+		alignItems: "center",
+	},
+	scrollView: {
+		flex: 1,
+		backgroundColor: "#FFFFFF",
+		paddingTop: 42,
+	},
+	text: {
+		color: "#16192C",
+		fontSize: 16,
+		marginBottom: 31,
+	},
+	text2: {
+		color: "#27272E",
+		fontSize: 12,
+		flex: 1,
+	},
+	text3: {
+		color: "#718096",
+		fontSize: 10,
+		marginBottom: 27,
+	},
+	text4: {
+		color: "#718096",
+		fontSize: 10,
+	},
+	text5: {
+		color: "#27272E",
+		fontSize: 20,
+	},
+	text6: {
+		color: "#718096",
+		fontSize: 10,
+		marginBottom: 26,
+	},
+	text7: {
+		color: "#000000",
+		fontSize: 22,
+		marginBottom: 15,
+	},
+	text8: {
+		color: "#4C6FFF",
+		fontSize: 12,
+		marginHorizontal: 3,
+	},
+	text9: {
+		color: "#4C6FFF",
+		fontSize: 12,
+		marginRight: 4,
+		flex: 1,
+	},
+	text10: {
+		color: "#7A7979",
+		fontSize: 12,
+		marginRight: 70,
+	},
+	text11: {
+		color: "#7A7979",
+		fontSize: 12,
+		marginRight: 52,
+	},
+	text12: {
+		color: "#221F1F",
+		fontSize: 12,
+	},
+	view: {
+		width: 117,
+		height: 115,
+		alignItems: "center",
+		paddingVertical: 50,
 	},
 });
